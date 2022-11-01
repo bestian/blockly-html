@@ -1,7 +1,6 @@
 <html>
   <head>
     <title>用拼圖拼出HTML網頁檔</title>
-    <style></style>
     <link rel="icon" type="image/x-icon" href="./favicon.ico">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.5.0/semantic.min.css" integrity="sha512-KXol4x3sVoO+8ZsWPFI/r5KBVB/ssCGB5tsv2nVOKwLg33wTFP3fmnXa47FdSVIshVTgsYk/1734xSk9aFIa4A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <script
@@ -14,6 +13,48 @@
     <meta property="og:description"        content="用拼圖拼出HTML網頁檔" />
     <meta property="og:image"              content="https://bestian.github.io/blockly-html/screenshot.png" />
     <meta charset="utf-8">
+    <style type="text/css">
+      body {
+        text-align: center;
+      }
+      .ui.segment.container {
+        position: relative;
+        z-index: 2 !important;
+      }
+      .link {
+        text-decoration: underline;
+      }
+      .ribbon {
+        z-index: 1 !important;
+        background-color: #a00;
+        overflow: hidden;
+        white-space: nowrap;
+        position: absolute;
+        right: -50px;
+        top: 40px;
+        -webkit-transform: rotate(45deg);
+           -moz-transform: rotate(45deg);
+            -ms-transform: rotate(45deg);
+             -o-transform: rotate(45deg);
+                transform: rotate(45deg);
+        -webkit-box-shadow: 0 0 10px #888;
+           -moz-box-shadow: 0 0 10px #888;
+                box-shadow: 0 0 10px #888;
+      }
+      .ribbon a {
+        position: relative;
+        z-index: 1 !important;
+        border: 1px solid #faa;
+        color: #fff;
+        display: block;
+        font: bold 81.25% 'Helvetica Neue', Helvetica, Arial, sans-serif;
+        margin: 1px 0;
+        padding: 10px 50px;
+        text-align: center;
+        text-decoration: none;
+        text-shadow: 0 0 5px #444;
+      }
+    </style>
   </head>
   <body>
     <div class="ui segment container">
@@ -23,11 +64,17 @@
         <a class="ui big blue button" href="./demo_en.html">English</a>
         <a class="ui big purple button" href="./demo_de.html">Deutsch</a>
       </div>
+      <br/>
+      <br/>
+      <br/>
+      <br/>
+      <a class="link" href="https://www.github.com/bestian/blockly-html/issues/" target="_blank" rel="no-referrer no-opener">錯誤回報與功能請求 / BUG Report & Feature requset / Fehlerbericht & Funktionsanforderung
+      </a>
+      <div class="ribbon">
+        <a href="https://www.github.com/bestian/blockly-html" target="_blank" rel="no-referrer no-opener">Fork me on GitHub
+          <i class="github icon"></i>
+        </a>
+      </div>
     </div>
-    <style type="text/css">
-      body {
-        text-align: center;
-      }
-    </style>
   </body>
 </html>

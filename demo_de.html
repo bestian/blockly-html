@@ -767,14 +767,32 @@
       function saveWorkspaceToDownload() {
         var xml = Blockly.Xml.workspaceToDom(workspace);
         var xml_text = Blockly.Xml.domToText(xml);
-        newWindow = window.open("data:application/octet-stream," + encodeURIComponent(xml_text), 'webseite.blockly.xml');
+        var blob = new Blob([xml_text], {type: "text/xml"});
+        var url = URL.createObjectURL(blob);
+        var a = document.createElement('a');
+        a.href = url;
+        a.download = 'webseite.blockly.xml'; // Specify the file name and extension
+        document.body.appendChild(a);
+        a.click();
+        document.body.removeChild(a);
+        URL.revokeObjectURL(url);
       }
-      document.getElementById("saveButton").onclick = saveWorkspaceToDownload;
 
       function saveHtmlToDownload() {
         var code = HtmlGenerator.workspaceToCode(workspace);
-        newWindow = window.open("data:application/octet-stream," + encodeURIComponent(code), 'webseite.html');
+        var blob = new Blob([code], {type: "text/html"});
+        var url = URL.createObjectURL(blob);
+        var a = document.createElement('a');
+        a.href = url;
+        a.download = 'webseite.html'; // Specify the file name and extension
+        document.body.appendChild(a);
+        a.click();
+        document.body.removeChild(a);
+        URL.revokeObjectURL(url);
       }
+
+      document.getElementById("saveButton").onclick = saveWorkspaceToDownload;
+
       document.getElementById("exportButton").onclick = saveHtmlToDownload;
 
 
